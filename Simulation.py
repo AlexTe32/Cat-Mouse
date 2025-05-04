@@ -117,7 +117,7 @@ def run_simulation(N=80, P=80, num_cats=3, num_mice=3, num_obstacles=150, wait_t
 
         turns += 1
 
-        if not mice:
+        if not mice or turns>12000:
             font_big = pygame.font.Font(None, 72)
             win_text = font_big.render("You Win!", True, WIN_COLOR)
             screen.blit(win_text, (WIDTH // 2 - 100, HEIGHT // 2 - 40))
