@@ -92,7 +92,7 @@ def run_simulation(N=80, P=80, num_cats=3, num_mice=3, num_obstacles=150, wait_t
                 pygame.quit()
                 sys.exit()
 
-        time.sleep(wait_time)
+        time.sleep(wait_time/5000)
 
         new_cat_positions = set()
         if (turns % 3) == 0:
@@ -122,8 +122,8 @@ def run_simulation(N=80, P=80, num_cats=3, num_mice=3, num_obstacles=150, wait_t
             win_text = font_big.render("You Win!", True, WIN_COLOR)
             screen.blit(win_text, (WIDTH // 2 - 100, HEIGHT // 2 - 40))
             pygame.display.flip()
-            time.sleep(0)
+            time.sleep(wait_time)
             pygame.quit()
             return turns
 
-        clock.tick(2000)
+        clock.tick(10)
