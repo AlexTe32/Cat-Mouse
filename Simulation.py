@@ -22,10 +22,11 @@ def run_simulation(N=80, P=80, num_cats=3, num_mice=3, num_obstacles=150, wait_t
 
     # Иницијализирај pygame
     # Користиме pygame за да ни го олесни симулацијата и визулацијата
+    pygame.init()
+    font = pygame.font.SysFont('Arial', 24)
     screen = pygame.display.set_mode((WIDTH, HEIGHT + 40))
     pygame.display.set_caption("Cat and Mouse")
     clock = pygame.time.Clock()
-    font = pygame.font.SysFont(None, 30)
 
     # Иницилизираме низи за Мачките, Глувците и Препреките
     cats = []
@@ -131,10 +132,9 @@ def run_simulation(N=80, P=80, num_cats=3, num_mice=3, num_obstacles=150, wait_t
 
         # Проверка дали сеуште има глувци, ако нема се врача бројот на циклуси
         if not mice or turns>12000:
-            font_big = pygame.font.Font(None, 72)
             pygame.display.flip()
             time.sleep(wait_time)
             pygame.quit()
             return turns
 
-        clock.tick(10)
+        clock.tick(100)

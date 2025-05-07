@@ -5,6 +5,8 @@ class Mouse:
         self.row = row
         self.col = col
 
+    def get_position(self):
+        return self.row, self.col
 
     def move_random(self, max_rows, max_cols, obstacles=set(), occupied=set()):
         # Глушецот пробува да најде случајна позиција на која може да се помести
