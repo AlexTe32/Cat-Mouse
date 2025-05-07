@@ -17,4 +17,4 @@ if __name__ == "__main__":
         sheet["B"+str((y+2))]=y+1
         sheet["C"+str((y+2))]=sum/number_of_runs
         print(f"Avrage time {sum/number_of_runs} turns!")
-    wb.save("simulation_resultues3.xlsx")
+    wb.save("1-100-mice.xlsx")

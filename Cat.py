@@ -1,9 +1,11 @@
 from pathfinding import a_star, manhattan
 
 class Cat:
+    # Иницализација на Мачка
     def __init__(self, row, col):
         self.row = row
         self.col = col
+
 
     def get_position(self):
         return self.row, self.col
@@ -14,13 +16,13 @@ class Cat:
 
         my_pos = self.get_position()
 
-        # Find the nearest mouse by Manhattan distance
+        # Мачката го наоча најблискит Глушец
         nearest = min(mice, key=lambda m: manhattan(my_pos, m.get_position()))
         target_pos = nearest.get_position()
 
-        # Compute A* path to the nearest mouse
+        # Го наоча патот до најблискиот Глушец
         path = a_star(my_pos, target_pos, grid_rows, grid_cols, obstacles | occupied)
 
-        # Move one step if path exists and is unoccupied
+        # Се движи кон најблискиот Глушец ако патот е слободен
         if path and path[0] not in occupied:
             self.row, self.col = path[0]
